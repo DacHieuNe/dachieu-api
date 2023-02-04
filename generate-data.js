@@ -8,7 +8,17 @@ faker.locale = "vi";
 function randomPostList(number) {
   var postList = [];
   Array.from({ length: number }).forEach((e) => {
-    var getTitle = faker.lorem.words(3);
+    let getTitle = faker.lorem.words(3);
+    let keyRandomImg = "uFXzHBnQ_zihPePExIVd4ZPU2MyIpSmyWnxmlxjb5-0";
+    let unplashAPI = `https://api.unsplash.com/photos/random/?client_id=${keyRandomImg}`;
+    let imageAPI = 0;
+    fetch(unplashAPI)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (jsonData) {
+        imageAPI = jsonData.urls.regular;
+      });
     postList.push({
       id: faker.datatype.uuid(),
       title: `${getTitle.slice(0, 1).toUpperCase()}${getTitle.slice(1)}`,
@@ -16,7 +26,7 @@ function randomPostList(number) {
       description: faker.lorem.paragraphs(2, ""),
       createdAt: Date.now(),
       updatedAt: Date.now(),
-      imageUrl: faker.image.nature(1368, 400),
+      imageUrl: imageAPI,
     });
   });
   return postList;
