@@ -3,14 +3,14 @@
   "name": "json-server-demo",
   "version": "1.0.0",
   "description": "test json-server",
-  "main": "main.js",
+  "main": "index.js",
   "engines": {
     "node": "14.x"
   },
   "scripts": {
     "test": "test json-server",
-    "dev": "nodemon main.js",
-    "start": "npm run generate-data && nodemon main.js",
+    "dev": "nodemon index.js",
+    "start": "npm run generate-data && nodemon index.js",
     "generate-data": "node generate-data.js"
   },
   "keywords": [
