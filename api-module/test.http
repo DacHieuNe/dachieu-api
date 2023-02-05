@@ -1,25 +1,8 @@
-# TEST API
+# @name AddNewPosts
 
-# @name GetAllPosts
-
-GET http://localhost:3000/api/posts
-
-###
-
-# @name GetPostById
-
-GET http://localhost:3000/posts/lea2aa9l7x3a5tg
-
-###
-
-# @name AddNewPost
-
-POST http://localhost:3000/api/posts/
+POST http://localhost:3000/api/posts
 Content-Type: application/json
 
 {
-    "title": "Yêu nhau bao lâu ?"
+    "title": "Hiếu viết"
 }
-
-
-
